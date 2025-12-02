@@ -37,7 +37,6 @@ const choices = ["rock", "paper", "scissors"];
 let humanScore = 0,
     computerScore = 0;
 
-
 //// UI Elements
 const scoreBoard = document.createElement("div");
 scoreBoard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`;
@@ -58,32 +57,49 @@ buttons.style.justifyContent = "center";
 const rock = document.createElement("button");
 rock.textContent = "🪨";
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
-rock.style.backgroundColor = "lightblue";
+rock.style.backgroundColor = "blue";
 rock.style.width = "90px";
 rock.style.height = "90px";
 rock.style.fontSize = "40px";
 buttons.appendChild(rock);
+rock.addEventListener("mouseover", () => {
+    rock.style.backgroundColor = "lightblue";
+});
+rock.addEventListener("mouseout", () => {
+    rock.style.backgroundColor = "blue";
+});
 
 const paper = document.createElement("button");
 paper.textContent = "📄";
 paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
-paper.style.backgroundColor = "lightgreen";
+paper.style.backgroundColor = "green";
 paper.style.width = "90px";
 paper.style.height = "90px";
 paper.style.fontSize = "40px";
 buttons.appendChild(paper);
+paper.addEventListener("mouseover", () => {
+    paper.style.backgroundColor = "lightgreen";
+});
+paper.addEventListener("mouseout", () => {
+    paper.style.backgroundColor = "green";
+});
 
 const scissors = document.createElement("button");
 scissors.textContent = "✂️";
 scissors.addEventListener("click", () =>
     playRound("scissors", getComputerChoice())
 );
-scissors.style.backgroundColor = "lightpink";
+scissors.style.backgroundColor = "red";
 scissors.style.width = "90px";
 scissors.style.height = "90px";
 scissors.style.fontSize = "40px";
 buttons.appendChild(scissors);
-
+scissors.addEventListener("mouseover", () => {
+    scissors.style.backgroundColor = "lightcoral";
+});
+scissors.addEventListener("mouseout", () => {
+    scissors.style.backgroundColor = "red";
+});
 
 const text = document.createElement("div");
 text.textContent = "Let's play! Choose your weapon:";
@@ -92,5 +108,3 @@ container.appendChild(buttons);
 container.appendChild(text);
 
 document.body.appendChild(container);
-
-
